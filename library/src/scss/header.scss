@@ -1,4 +1,90 @@
 //--------------------------------------------------------------
+.header {
+  padding: 20px 0;
+  background-color: #0c0c0e;
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #fff;
+  }
+
+  &__logo {
+    font-family: 'Forum';
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  &__menu {
+  }
+
+  &__profile {
+  }
+}
+.menu {
+  &__icon {
+    display: none;
+  }
+
+  &__body {
+  }
+
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__item {
+  }
+
+  &__link {
+    display: block;
+    position: relative;
+
+    font-size: 20px;
+    line-height: 50px;
+
+    span {
+      position: relative;
+      line-height: 28px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        transition: all 0.3s ease 0s;
+      }
+    }
+
+    &:hover {
+      color: #fff;
+
+      span::after {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+.profile {
+  &__icon {
+  }
+}
 
 //--------------------------------------------------------------
 // Меню бургер
@@ -71,41 +157,6 @@
 			&.menu-open {
 				left: 0;
 			}	
-		}
-	}
-}
-*/
-// Эффект для наведения
-/* 
-&__link {
-	display: block;
-	position: relative;
-	margin: 0px 0px 0px 24px;
-
-	font-weight: 500;
-	font-size: 24px;
-	color: #fff;
-
-	span {
-		position: relative;
-		line-height: 28px;
-		&::after {
-			content: '';
-			position: absolute;
-			left: 50%;
-			bottom: 0;
-			width: 0;
-			height: 2px;
-			background-color: #fff;
-			transition: all 0.3s ease 0s;
-	}
-
-	&:hover {
-		color: #fff;
-		
-		span::after {
-			left: 0;
-			width: 100%;
 		}
 	}
 }
