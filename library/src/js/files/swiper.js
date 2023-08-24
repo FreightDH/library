@@ -9,7 +9,7 @@ export function swiperInit() {
     slidesPerView: 3,
 
     // Расстояние между слайдами
-    spaceBetween: 15,
+    spaceBetween: 25,
 
     // Количество перелистываемых слайдов
     slidesPerGroup: 3,
@@ -24,16 +24,10 @@ export function swiperInit() {
     // Скорость смены слайдов, чем выше - тем плавнее
     speed: 500,
 
-    // Смена слайдов по клику на стрелки
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-
     // Прогресс-бар
     pagination: {
       el: '.swiper-pagination',
-      type: 'progressbar',
+      clickable: true,
     },
 
     // Управление с клавиатуры
@@ -43,23 +37,23 @@ export function swiperInit() {
     },
 
     // Брейкпоинты
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        slidesPerGroup: 1,
-      },
-      767.98: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
-        speed: 1000,
-        simulateTouch: false,
-        grabCursor: false,
-      },
-      1200.98: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-        speed: 1500,
-      },
-    },
+    // breakpoints: {
+    //   320: {
+    //     slidesPerView: 1,
+    //     slidesPerGroup: 1,
+    //   },
+    //   767.98: {
+    //     slidesPerView: 1,
+    //     slidesPerGroup: 1,
+    //     speed: 1000,
+    //     simulateTouch: false,
+    //     grabCursor: false,
+    //   },
+    //   1200.98: {
+    //     slidesPerView: 3,
+    //     slidesPerGroup: 3,
+    //     speed: 1500,
+    //   },
+    // },
   });
 }

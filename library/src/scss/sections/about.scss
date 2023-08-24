@@ -1,0 +1,113 @@
+@import '../base/swiper';
+
+.about {
+  padding: 20px 0px 40px 0px;
+
+  &__container {
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+  }
+
+  &__text {
+    padding: 0px 0px 20px 0px;
+  }
+
+  &__slider {
+  }
+}
+.section-title {
+  margin: 0px 0px 60px 0px;
+
+  color: #0c0c0e;
+  font-family: 'Forum';
+  font-size: 40px;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 50px;
+    height: 1px;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    background-color: #0c0c0e;
+  }
+}
+
+$slideSize: 450px;
+$slideMinSize: ($minWidth - $containerPadding) + px;
+
+.slider {
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+  }
+}
+.swiper {
+  &__wrapper {
+    max-width: calc($slideSize * 3 + 25px * 2);
+
+    // @media (max-width: $pc) {
+    //   max-width: calc($slideSize * 2 + 15px);
+    // }
+
+    @media (max-width: $mobile) {
+      max-width: $slideSize;
+    }
+
+    @media (max-width: $mobileSmall) {
+      @include adaptiveValue('max-width', 360, 290, 479.98, 320);
+    }
+  }
+
+  &__slide {
+    max-width: $slideSize;
+
+    display: flex;
+    flex-direction: column;
+
+    background-color: #fff;
+    border-radius: 10px;
+    border: 1px solid rgba($color: #000000, $alpha: 0.2);
+
+    transition: all 0.3s ease 0s;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__pagination {
+    position: static;
+    margin: 40px 0px 0px 0px;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 16px;
+  height: 16px;
+  background-color: #0c0c0e;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #bb945f;
+}
