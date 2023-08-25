@@ -28,38 +28,6 @@
     position: relative;
   }
 }
-.section-title {
-  margin: 0px 0px 60px 0px;
-
-  color: #0c0c0e;
-  font-family: 'Forum';
-  font-size: 40px;
-  letter-spacing: 2px;
-  text-transform: capitalize;
-
-  position: relative;
-
-  &::after {
-    content: '';
-    position: absolute;
-    width: 50px;
-    height: 1px;
-    bottom: -20px;
-    left: 0;
-    right: 0;
-    margin: 0 auto;
-    background-color: #0c0c0e;
-  }
-
-  @media (max-width: $mobile) {
-    @include adaptiveValue('font-size', 40, 25, 767.98, 320);
-    @include adaptiveValue('margin-bottom', 60, 25, 767.98, 320);
-
-    &::after {
-      @include adaptiveValue('bottom', -20, -10, 767.98, 320);
-    }
-  }
-}
 
 $slideSize: 450px;
 $slideMinSize: ($minWidth - $containerPadding) + px;
