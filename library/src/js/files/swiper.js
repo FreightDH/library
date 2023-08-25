@@ -15,7 +15,7 @@ export function swiperInit() {
     slidesPerGroup: 3,
 
     // Бесконечный слайдер
-    loop: true,
+    // loop: true,
 
     // Если нужно перетаскивание на ПК, то true
     simulateTouch: false,
@@ -24,7 +24,13 @@ export function swiperInit() {
     // Скорость смены слайдов, чем выше - тем плавнее
     speed: 500,
 
-    // Прогресс-бар
+    // Смена слайдов по клику на стрелки
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // Смена слайдов по клику на точки
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -37,23 +43,27 @@ export function swiperInit() {
     },
 
     // Брейкпоинты
-    // breakpoints: {
-    //   320: {
-    //     slidesPerView: 1,
-    //     slidesPerGroup: 1,
-    //   },
-    //   767.98: {
-    //     slidesPerView: 1,
-    //     slidesPerGroup: 1,
-    //     speed: 1000,
-    //     simulateTouch: false,
-    //     grabCursor: false,
-    //   },
-    //   1200.98: {
-    //     slidesPerView: 3,
-    //     slidesPerGroup: 3,
-    //     speed: 1500,
-    //   },
-    // },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+      },
+      767.98: {
+        slidesPerView: 1,
+        slidesPerGroup: 1,
+        speed: 1000,
+        simulateTouch: false,
+        grabCursor: false,
+      },
+      991.98: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      1439.98: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+        speed: 1500,
+      },
+    },
   });
 }

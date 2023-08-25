@@ -3,6 +3,10 @@
 .about {
   padding: 20px 0px 40px 0px;
 
+  @media (max-width: $mobile) {
+    @include adaptiveValue('padding-bottom', 40, 20, 767.98, 320);
+  }
+
   &__container {
   }
 
@@ -18,9 +22,16 @@
 
   &__text {
     padding: 0px 0px 20px 0px;
+    text-align: center;
+    line-height: 2;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 16, 767.98, 320);
+    }
   }
 
   &__slider {
+    position: relative;
   }
 }
 .section-title {
@@ -45,6 +56,15 @@
     margin: 0 auto;
     background-color: #0c0c0e;
   }
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('font-size', 40, 25, 767.98, 320);
+    @include adaptiveValue('margin-bottom', 60, 25, 767.98, 320);
+
+    &::after {
+      @include adaptiveValue('bottom', -20, -10, 767.98, 320);
+    }
+  }
 }
 
 $slideSize: 450px;
@@ -56,7 +76,9 @@ $slideMinSize: ($minWidth - $containerPadding) + px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
 
+  &__swiper {
     position: relative;
   }
 }
@@ -64,11 +86,11 @@ $slideMinSize: ($minWidth - $containerPadding) + px;
   &__wrapper {
     max-width: calc($slideSize * 3 + 25px * 2);
 
-    // @media (max-width: $pc) {
-    //   max-width: calc($slideSize * 2 + 15px);
-    // }
+    @media (max-width: 1439.98px) {
+      max-width: calc($slideSize * 2 + 25px);
+    }
 
-    @media (max-width: $mobile) {
+    @media (max-width: $tablet) {
       max-width: $slideSize;
     }
 
@@ -80,26 +102,66 @@ $slideMinSize: ($minWidth - $containerPadding) + px;
   &__slide {
     max-width: $slideSize;
 
-    display: flex;
-    flex-direction: column;
-
-    background-color: #fff;
-    border-radius: 10px;
-    border: 1px solid rgba($color: #000000, $alpha: 0.2);
-
-    transition: all 0.3s ease 0s;
-
     img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @media (max-width: 1439.98px) {
+      &.pc-slide-hide {
+        display: none;
+      }
+    }
+
+    @media (max-width: $tablet) {
+      &.tablet-slide-hide {
+        display: none;
+      }
+    }
+  }
+
+  &__navigation {
+    // position: relative;
+    @media (max-width: $mobile) {
+      // display: none;
+    }
+  }
+
+  &__button {
+    display: none;
+    position: absolute;
+    width: 60px;
+    height: 60px;
+
+    top: 45%;
+
+    background: url('@img/about/arrow.svg') center / cover no-repeat;
+
+    @media (max-width: $tablet) {
+      display: block;
+    }
+
+    @media (max-width: $mobile) {
+      display: none;
     }
   }
 
   &__pagination {
     position: static;
     margin: 40px 0px 0px 0px;
+    @include adaptiveValue('margin-top', 40, 20);
   }
+}
+
+.swiper-button-prev,
+.swiper-rtl .swiper-button-next {
+  left: -100px;
+}
+
+.swiper-button-next,
+.swiper-rtl .swiper-button-prev {
+  right: -100px;
 }
 
 .swiper-pagination-bullet {
@@ -107,6 +169,11 @@ $slideMinSize: ($minWidth - $containerPadding) + px;
   height: 16px;
   background-color: #0c0c0e;
   opacity: 1;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('width', 16, 12, 767.98, 320);
+    @include adaptiveValue('height', 16, 12, 767.98, 320);
+  }
 }
 .swiper-pagination-bullet-active {
   background-color: #bb945f;
