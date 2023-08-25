@@ -2,9 +2,21 @@
 // Snippet code "a.btn"
 .btn {
   display: inline-block;
-  padding: 0px 0px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0px 27px;
+
+  color: #0c0c0e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  border: 1px solid #0c0c0e;
+  border-radius: 2px;
+  transition: all 0.3s ease 0s;
 
   &:hover {
+    background-color: #bb945f;
   }
 
   &.fw {

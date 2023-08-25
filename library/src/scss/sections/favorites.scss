@@ -1,0 +1,143 @@
+.favorites {
+  padding: 20px 0px 40px 0px;
+
+  &__filter {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.filter {
+  &__title {
+    font-weight: 700;
+  }
+
+  &__params {
+    padding: 40px 0px;
+    display: flex;
+    gap: 90px;
+  }
+
+  &__picks {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+  }
+}
+
+.params {
+  &__season {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      margin: 0px 20px 0px 0px;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #000;
+    }
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 6.5px;
+      left: 5px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #000;
+    }
+
+    &.active {
+      font-weight: 700;
+
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
+
+.picks {
+  &__book {
+    max-width: 550px;
+    padding: 15px 20px;
+    flex: 0 0 50%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid #000;
+  }
+}
+
+.book {
+  &__staff {
+    font-family: 'Forum';
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 1px;
+      bottom: -10px;
+      left: 0;
+      background-color: #bb945f;
+    }
+  }
+
+  &__title {
+    max-width: 170px;
+    padding: 30px 0px 20px 0px;
+
+    font-size: 15px;
+    line-height: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    span {
+      text-transform: capitalize;
+    }
+  }
+
+  &__text {
+    max-width: 355px;
+    flex: 1 1 auto;
+
+    font-size: 15px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+  }
+
+  &__image {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    bottom: -1px;
+    right: -40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__btn {
+    margin: 24px 0px 0px 0px;
+    align-self: flex-start;
+  }
+}
