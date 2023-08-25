@@ -1,0 +1,35 @@
+.welcome {
+  padding: 220px 0px 160px 0px;
+  background: url('@img/welcome/bg.jpg') center / cover no-repeat;
+  background:
+    linear-gradient(180deg, #0c0c0e 0%, #0c0c0e 5%, rgba(18, 18, 21, 0.1) 40%),
+    url('@img/welcome/bg.jpg') center / cover no-repeat;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('padding-top', 220, 100, 767.98, 320);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__title {
+    max-width: 600px;
+    padding: 35px 40px;
+    background-color: #0c0c0e;
+
+    color: #fff;
+    text-align: center;
+    font-family: 'Forum';
+    font-size: 40px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 40, 25, 767.98, 320);
+      background: rgba($color: #0c0c0e, $alpha: 0.2);
+    }
+  }
+}
