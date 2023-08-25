@@ -9,13 +9,26 @@
 
 .filter {
   &__title {
+    line-height: 2;
     font-weight: 700;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 16, 767.98, 320);
+    }
   }
 
   &__params {
     padding: 40px 0px;
     display: flex;
     gap: 90px;
+
+    @media (max-width: $mobile) {
+      flex-wrap: wrap;
+      gap: 15px;
+      @include adaptiveValue('font-size', 20, 15, 767.98, 320);
+      @include adaptiveValue('padding-top', 40, 10, 767.98, 320);
+      @include adaptiveValue('padding-bottom', 40, 30, 767.98, 320);
+    }
   }
 
   &__picks {
@@ -23,6 +36,12 @@
     justify-content: space-between;
     flex-wrap: wrap;
     row-gap: 40px;
+
+    @media (max-width: 1500px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }
 
@@ -54,6 +73,18 @@
       background-color: #000;
     }
 
+    @media (max-width: $mobile) {
+      flex: 0 0 50%;
+
+      &::before {
+        @include adaptiveValue('margin-right', 20, 10);
+      }
+
+      &::after {
+        @include adaptiveValue('top', 6.5, 5.5);
+      }
+    }
+
     &.active {
       font-weight: 700;
 
@@ -66,15 +97,21 @@
 
 .picks {
   &__book {
-    max-width: 550px;
+    width: 550px;
     padding: 15px 20px;
-    flex: 0 0 50%;
+    flex: 0 0 550px;
     position: relative;
 
     display: flex;
     flex-direction: column;
 
     border: 1px solid #000;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('max-width', 550, 280, 767.98, 320);
+      @include adaptiveValue('padding-left', 20, 10);
+      @include adaptiveValue('padding-right', 20, 10);
+    }
   }
 }
 
@@ -85,6 +122,14 @@
     text-transform: capitalize;
 
     position: relative;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 16, 767.98, 320);
+
+      &::before {
+        @include adaptiveValue('width', 60, 40);
+      }
+    }
 
     &::before {
       content: '';
@@ -110,6 +155,13 @@
     span {
       text-transform: capitalize;
     }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('padding-top', 30, 20);
+      @include adaptiveValue('padding-bottom', 20, 5);
+      @include adaptiveValue('font-size', 15, 12, 767.98, 320);
+      @include adaptiveValue('line-height', 40, 25);
+    }
   }
 
   &__text {
@@ -120,6 +172,12 @@
     line-height: 40px;
     letter-spacing: 2px;
     text-transform: capitalize;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('max-width', 355, 180);
+      @include adaptiveValue('font-size', 15, 12, 767.98, 320);
+      @include adaptiveValue('line-height', 40, 25);
+    }
   }
 
   &__image {
@@ -133,6 +191,12 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('width', 200, 100, 767.98, 320);
+      @include adaptiveValue('height', 300, 150, 767.98, 320);
+      @include adaptiveValue('right', -40, -10, 767.98, 320);
     }
   }
 
