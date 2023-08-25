@@ -7,17 +7,11 @@
     @include adaptiveValue('padding-bottom', 40, 20, 767.98, 320);
   }
 
-  &__container {
-  }
-
   &__body {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  &__title {
   }
 
   &__text {
@@ -69,6 +63,7 @@
 
 $slideSize: 450px;
 $slideMinSize: ($minWidth - $containerPadding) + px;
+$spaceBetween: 25px;
 
 .slider {
   &__body {
@@ -84,10 +79,10 @@ $slideMinSize: ($minWidth - $containerPadding) + px;
 }
 .swiper {
   &__wrapper {
-    max-width: calc($slideSize * 3 + 25px * 2);
+    max-width: calc($slideSize * 3 + $spaceBetween * 2);
 
     @media (max-width: 1439.98px) {
-      max-width: calc($slideSize * 2 + 25px);
+      max-width: calc($slideSize * 2 + $spaceBetween);
     }
 
     @media (max-width: $tablet) {
@@ -122,21 +117,7 @@ $slideMinSize: ($minWidth - $containerPadding) + px;
   }
 
   &__navigation {
-    // position: relative;
-    @media (max-width: $mobile) {
-      // display: none;
-    }
-  }
-
-  &__button {
     display: none;
-    position: absolute;
-    width: 60px;
-    height: 60px;
-
-    top: 45%;
-
-    background: url('@img/about/arrow.svg') center / cover no-repeat;
 
     @media (max-width: $tablet) {
       display: block;
@@ -145,6 +126,14 @@ $slideMinSize: ($minWidth - $containerPadding) + px;
     @media (max-width: $mobile) {
       display: none;
     }
+  }
+
+  &__button {
+    width: 60px;
+    height: 60px;
+    top: 45%;
+
+    background: url('@img/about/arrow.svg') center / cover no-repeat;
   }
 
   &__pagination {
