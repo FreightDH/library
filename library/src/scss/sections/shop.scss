@@ -1,0 +1,124 @@
+.shop {
+  padding: 20px 0px 40px 0px;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('padding-top', 20, 10, 767.98, 320);
+    @include adaptiveValue('padding-bottom', 40, 20, 767.98, 320);
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__text {
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-align: center;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 14, 767.98, 320);
+    }
+  }
+
+  &__products {
+    width: 100%;
+    padding: 40px 0px 0px 0px;
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: $tablet) {
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('padding-top', 40, 20, 767.98, 320);
+      @include adaptiveValue('gap', 40, 20, 767.98, 320);
+    }
+  }
+}
+
+.products {
+  &__column {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px;
+
+    &.column--right {
+      text-align: right;
+
+      .product__name {
+        flex: 1 1 auto;
+      }
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('gap', 40, 15, 767.98, 320);
+    }
+  }
+
+  &__title {
+    color: #bb945f;
+    font-family: 'Forum';
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 40, 25, 767.98, 320);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('gap', 40, 20, 767.98, 320);
+    }
+  }
+
+  &__product {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 60px;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 14, 767.98, 320);
+      @include adaptiveValue('line-height', 40, 32, 767.98, 320);
+      @include adaptiveValue('column-gap', 60, 25, 767.98, 320);
+    }
+  }
+}
+
+.product {
+  &__name {
+    flex: 0 0 196px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('line-height', 40, 32, 767.98, 320);
+      white-space: normal;
+      flex: 1 1 auto;
+    }
+  }
+
+  &__divider {
+    width: 100px;
+    height: 1px;
+    background-color: #bb945f;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('width', 100, 45, 767.98, 320);
+    }
+  }
+}
