@@ -20,7 +20,7 @@
     line-height: 2;
 
     @media (max-width: $mobile) {
-      @include adaptiveValue('font-size', 20, 16, 767.98, 320);
+      @include adaptiveValue('font-size', 20, 14, 767.98, 320);
     }
   }
 
