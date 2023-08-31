@@ -1,6 +1,11 @@
 .favorites {
   padding: 20px 0px 40px 0px;
 
+  @media (max-width: $mobile) {
+    @include adaptiveValue('padding-top', 20, 10, 767.98, 320);
+    @include adaptiveValue('padding-bottom', 40, 20, 767.98, 320);
+  }
+
   &__filter {
     display: flex;
     flex-direction: column;
