@@ -1,0 +1,209 @@
+.digital {
+  padding: 20px 0px 40px 0px;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('padding-top', 20, 10, 767.98, 320);
+    @include adaptiveValue('padding-bottom', 40, 20, 767.98, 320);
+  }
+
+  &__container {
+    @media (max-width: 1000px) {
+      max-width: 600px;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('padding-top', 0, 10, 767.98, 320);
+    }
+  }
+
+  &__column {
+    flex: 0 0 50%;
+
+    @media (max-width: 1000px) {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+  }
+}
+
+.column {
+  &__title {
+    font-size: 30px;
+    letter-spacing: 0.6px;
+
+    @media (max-width: 1000px) {
+      text-align: center;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 30, 18, 767.98, 320);
+    }
+  }
+
+  &__card {
+    max-width: 600px;
+    margin: 30px 0px 0px 0px;
+    padding: 20px 20px 30px 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    border: 3px solid #bb945f;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('margin-top', 30, 15, 767.98, 320);
+      @include adaptiveValue('padding-top', 20, 10, 767.98, 320);
+      @include adaptiveValue('padding-bottom', 30, 15, 767.98, 320);
+      @include adaptiveValue('padding-right', 20, 10, 767.98, 320);
+      @include adaptiveValue('padding-left', 20, 10, 767.98, 320);
+    }
+  }
+
+  &__text {
+    padding: 35px 0px 45px 0px;
+    line-height: 40px;
+    letter-spacing: 0.4px;
+
+    @media (max-width: 1000px) {
+      padding: 40px 0;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 14, 767.98, 320);
+      @include adaptiveValue('line-height', 40, 20, 767.98, 320);
+      @include adaptiveValue('padding-top', 40, 15, 767.98, 320);
+      @include adaptiveValue('padding-bottom', 40, 15, 767.98, 320);
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+
+    @media (max-width: 1000px) {
+      justify-content: center;
+    }
+  }
+
+  &__btn {
+    min-width: 75px;
+    padding: 0px 10px;
+
+    @media (max-width: $mobile) {
+      padding: 0px 25px;
+    }
+  }
+}
+
+.card {
+  &__body {
+    padding: 20px 20px 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #bb945f;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('padding-top', 20, 15, 767.98, 320);
+      @include adaptiveValue('padding-bottom', 25, 15, 767.98, 320);
+      @include adaptiveValue('padding-right', 20, 15, 767.98, 320);
+      @include adaptiveValue('padding-left', 20, 15, 767.98, 320);
+    }
+  }
+
+  &__title {
+    margin: 0px 0px 20px 0px;
+
+    font-family: 'Forum';
+    font-size: 30px;
+    letter-spacing: 0.6px;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 30, 18, 767.98, 320);
+      @include adaptiveValue('margin-bottom', 20, 15, 767.98, 320);
+    }
+  }
+
+  &__input {
+    padding: 8px 20px;
+    border-radius: 10px;
+
+    color: #8e8e8e;
+    font-family: 'Forum';
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 30, 18, 767.98, 320);
+      @include adaptiveValue('line-height', 50, 30, 767.98, 320);
+      @include adaptiveValue('padding-right', 20, 10, 767.98, 320);
+      @include adaptiveValue('padding-left', 20, 10, 767.98, 320);
+    }
+
+    &:not(:last-child) {
+      margin: 0px 0px 20px 0px;
+
+      @media (max-width: $mobile) {
+        @include adaptiveValue('margin-bottom', 20, 15, 767.98, 320);
+      }
+    }
+
+    &:focus {
+      color: #000;
+    }
+
+    &:focus::placeholder {
+      color: transparent;
+      transition: all 0.2s ease 0s;
+    }
+  }
+
+  &__btn {
+    height: auto;
+    margin: 20px 0px 0px 0px;
+    padding: 10px 40px;
+    align-self: center;
+
+    font-size: 20px;
+    line-height: normal;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 12, 767.98, 320);
+      @include adaptiveValue('margin-top', 20, 15, 767.98, 320);
+      @include adaptiveValue('padding-top', 10, 8, 767.98, 320);
+      @include adaptiveValue('padding-bottom', 10, 8, 767.98, 320);
+      @include adaptiveValue('padding-right', 40, 25, 767.98, 320);
+      @include adaptiveValue('padding-left', 40, 25, 767.98, 320);
+    }
+  }
+}
+
+.column--right {
+  flex: 0 0 460px;
+  text-align: right;
+
+  .column__title {
+    font-family: 'Forum';
+  }
+
+  @media (max-width: 1000px) {
+    flex: 1 1 auto;
+    text-align: center;
+  }
+}
