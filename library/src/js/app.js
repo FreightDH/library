@@ -13,4 +13,4 @@ initSwiper();
 // Фильтры
 initFilter();
 
-import './modules/favorites/filter.js';
+import './modules/authorization/authorization.js';
