@@ -1,0 +1,71 @@
+.contacts {
+  padding: 20px 0px 40px 0px;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('padding-top', 20, 10, 767.98, 320);
+    @include adaptiveValue('padding-bottom', 40, 20, 767.98, 320);
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+    @media (max-width: 1100px) {
+      flex-direction: column;
+      gap: 100px;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('gap', 100, 25, 767.98, 320);
+    }
+  }
+
+  &__column {
+    flex: 0 0 50%;
+  }
+
+  &__subtitle {
+    font-weight: 700;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 15, 767.98, 320);
+      @include adaptiveValue('line-height', 40, 30, 767.98, 320);
+    }
+  }
+
+  &__list {
+    padding: 40px 0;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('padding-top', 40, 10, 767.98, 320);
+      @include adaptiveValue('padding-bottom', 40, 10, 767.98, 320);
+    }
+  }
+
+  &__contact {
+    &:not(:first-child) {
+      margin: 20px 0px 0px 0px;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 14, 767.98, 320);
+      @include adaptiveValue('line-height', 40, 28, 767.98, 320);
+
+      &:not(:first-child) {
+        @include adaptiveValue('margin-top', 20, 10, 767.98, 320);
+      }
+    }
+  }
+
+  &__map {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
