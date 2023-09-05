@@ -14,7 +14,7 @@ export function initMenu() {
         document.documentElement.classList.remove('menu-open');
         document.querySelector('.menu__body').classList.remove('menu-open');
       }
-      if (bodyLockStatus && !event.target.closest('.menu__link')) {
+      if (bodyLockStatus && !event.target.closest('.menu__link') && !event.target.closest('.popup-content')) {
         unlockBody();
         document.documentElement.classList.remove('menu-open');
         document.querySelector('.menu__body').classList.remove('menu-open');
