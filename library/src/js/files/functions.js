@@ -31,6 +31,7 @@ export const unlockBody = (delay = 300) => {
       body.style.paddingRight = '0px';
       document.documentElement.classList.remove('lock');
     }, delay);
+
     bodyLockStatus = false;
     setTimeout(() => {
       bodyLockStatus = true;

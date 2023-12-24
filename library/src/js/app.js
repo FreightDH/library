@@ -3,6 +3,7 @@ import * as myFunctions from './files/functions.js';
 import * as menuFunctions from './files/burger.js';
 import { initSwiper } from './files/swiper.js';
 import { initFilter } from './modules/favorites/filter.js';
+import { initAuthorization } from './modules/authorization/authorization.js';
 
 // Проверка поддержки webp, добавление класса webp или no-webp для HTML
 myFunctions.isWebp();
@@ -12,5 +13,5 @@ menuFunctions.initMenu();
 initSwiper();
 // Фильтры
 initFilter();
-
-import './modules/authorization/authorization.js';
+// Авторизация
+initAuthorization();

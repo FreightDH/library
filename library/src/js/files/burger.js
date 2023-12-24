@@ -3,7 +3,7 @@ import { bodyLockStatus, bodyLockToggle, unlockBody, lockBody } from './function
 // МЕНЮ-БУРГЕР
 export function initMenu() {
   if (document.querySelector('.menu__icon')) {
-    document.addEventListener('click', function (event) {
+    document.addEventListener('click', (event) => {
       if (bodyLockStatus && event.target.closest('.menu__icon')) {
         bodyLockToggle();
         document.documentElement.classList.toggle('menu-open');
