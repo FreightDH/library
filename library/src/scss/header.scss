@@ -212,12 +212,15 @@
   }
 
   &__dropdown {
+    display: none;
     padding: 5px 10px 20px 10px;
 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    &.visible {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
 
     position: absolute;
     top: 40px;

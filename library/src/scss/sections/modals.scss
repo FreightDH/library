@@ -1,4 +1,10 @@
 .modal {
+  display: none;
+
+  &.visible {
+    display: block;
+  }
+
   &__reglog {
     display: flex;
     justify-content: center;

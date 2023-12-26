@@ -1,17 +1,17 @@
 import '../scss/style.scss';
-import * as myFunctions from './files/functions.js';
-import * as menuFunctions from './files/burger.js';
-import { initSwiper } from './files/swiper.js';
-import { initFilter } from './modules/favorites/filter.js';
-import { initAuthorization } from './modules/authorization/authorization.js';
+import { isWebp } from './files/functions.js';
+import initMenu from './files/burger.js';
+import initSwiper from './files/swiper.js';
+import initFilter from './modules/favorites/filter.js';
+import initAuthorization from './modules/authorization/authorization.js';
 
-// Проверка поддержки webp, добавление класса webp или no-webp для HTML
-myFunctions.isWebp();
-// Модуль для работы с меню-бургер
-menuFunctions.initMenu();
-// Слайдер
-initSwiper();
-// Фильтры
-initFilter();
-// Авторизация
-initAuthorization();
+window.addEventListener('load', () => {
+  isWebp();
+  initMenu();
+  initSwiper();
+  initFilter();
+  initAuthorization();
+
+  document.querySelector('.modal').classList.add('visible');
+  document.querySelector('.profile__dropdown').classList.add('visible');
+});
