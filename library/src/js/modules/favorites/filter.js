@@ -1,7 +1,7 @@
 import booksInfo from './booksInfo.js';
 import { createElement } from '../../files/functions.js';
 
-export function initFilter() {
+const initFilter = () => {
   const booksElement = document.querySelector('.filter__picks');
   const seasons = document.querySelectorAll('.params__season');
 
@@ -11,9 +11,9 @@ export function initFilter() {
   }
 
   seasons.forEach((season) => season.addEventListener('click', changeBooks));
-}
+};
 
-function createBook(season, index) {
+const createBook = (season, index) => {
   const bookBody = createElement('div', 'picks__book');
   const staff = createElement('div', 'book__staff', 'Staff Picks');
   const title = createElement(
@@ -31,9 +31,9 @@ function createBook(season, index) {
 
   bookBody.append(staff, title, text, image, button);
   return bookBody;
-}
+};
 
-function changeBooks(event) {
+const changeBooks = (event) => {
   // A place to append books
   const booksElement = document.querySelector('.filter__picks');
   const seasons = document.querySelectorAll('.params__season');
@@ -59,4 +59,6 @@ function changeBooks(event) {
     const newBooks = document.querySelectorAll('.picks__book');
     newBooks.forEach((book) => book.classList.remove('hide'));
   }, 300);
-}
+};
+
+export default initFilter;

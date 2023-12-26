@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination } from 'swiper/modules';
 
-export function initSwiper() {
+const initSwiper = () => {
   new Swiper('.slider__swiper', {
     modules: [Navigation, Pagination],
 
@@ -13,9 +13,6 @@ export function initSwiper() {
 
     // Количество перелистываемых слайдов
     slidesPerGroup: 3,
-
-    // Бесконечный слайдер
-    // loop: true,
 
     // Если нужно перетаскивание на ПК, то true
     simulateTouch: false,
@@ -66,4 +63,6 @@ export function initSwiper() {
       },
     },
   });
-}
+};
+
+export default initSwiper;

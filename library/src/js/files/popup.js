@@ -1,6 +1,6 @@
-import { bodyLockStatus, bodyLockToggle, lockBody, unlockBody } from './functions.js';
+import { bodyLockStatus, lockBody, unlockBody } from './functions.js';
 
-export function popupOpen(popup) {
+const popupOpen = (popup) => {
   if (bodyLockStatus && popup) {
     lockBody();
     popup.classList.add('popup-open');
@@ -10,11 +10,13 @@ export function popupOpen(popup) {
       }
     });
   }
-}
+};
 
-export function popupClose(popup) {
+const popupClose = (popup) => {
   if (bodyLockStatus) {
     unlockBody();
     popup.classList.remove('popup-open');
   }
-}
+};
+
+export { popupOpen, popupClose };

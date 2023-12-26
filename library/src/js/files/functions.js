@@ -1,5 +1,5 @@
 // ПРОВЕРКА ПОДДЕРЖКИ WEBP
-export function isWebp() {
+const isWebp = () => {
   // Проверка поддержки webp
   function testWebP(callback) {
     const webP = new Image();
@@ -14,12 +14,12 @@ export function isWebp() {
     const className = support === true ? 'webp' : 'no-webp';
     document.documentElement.classList.add(className);
   });
-}
+};
 //----------------------------------------------------------------------
 // МОДУЛИ БЛОКИРОВКИ ПРОКРУТКИ
-export let bodyLockStatus = true;
+let bodyLockStatus = true;
 
-export const unlockBody = (delay = 300) => {
+const unlockBody = (delay = 300) => {
   const body = document.querySelector('body');
   if (bodyLockStatus) {
     const lockPadding = document.querySelectorAll('[data-lp]');
@@ -39,7 +39,7 @@ export const unlockBody = (delay = 300) => {
   }
 };
 
-export const lockBody = (delay = 300) => {
+const lockBody = (delay = 300) => {
   const body = document.querySelector('body');
   if (bodyLockStatus) {
     const lockPadding = document.querySelectorAll('[data-lp]');
@@ -57,7 +57,7 @@ export const lockBody = (delay = 300) => {
   }
 };
 
-export const bodyLockToggle = (delay = 300) => {
+const bodyLockToggle = (delay = 300) => {
   if (document.documentElement.classList.contains('lock')) {
     unlockBody(delay);
   } else {
@@ -65,24 +65,8 @@ export const bodyLockToggle = (delay = 300) => {
   }
 };
 //----------------------------------------------------------------------
-// ДРУГОЕ
-
-// ГЕНЕРАЦИЯ СЛУЧАЙНОГО ЧИСЛА, ВКЛЮЧАЯ MIN и MAX
-export const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
-//----------------------------------------------------------------------
-
-// ПЕРЕМЕШИВАНИЕ МАССИВА
-export const shuffleArray = (array) => {
-  for (let i = array.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-
-  return array;
-};
-//----------------------------------------------------------------------
 // СОЗДАНИЕ ЭЛЕМЕНТА
-export const createElement = (tag = 'div', classname = '', content = '') => {
+const createElement = (tag = 'div', classname = '', content = '') => {
   const element = document.createElement(tag);
   element.className = `${classname}`;
   element.innerHTML = `${content}`;
@@ -90,3 +74,5 @@ export const createElement = (tag = 'div', classname = '', content = '') => {
   return element;
 };
 //----------------------------------------------------------------------
+
+export { isWebp, lockBody, unlockBody, bodyLockToggle, bodyLockStatus, createElement };
