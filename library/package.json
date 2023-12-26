@@ -9,13 +9,10 @@
   "scripts": {
     "start": "gulp && webpack serve --progress -c config/webpack.dev.js",
     "build": "gulp build --build",
-    "sprite": "gulp sprite",
     "fonts": "gulp fonts --rewrite",
     "deploy": "gulp deployFTP --build",
     "zip": "gulp deployZIP --build",
-    "devbuild": "gulp build --build --nowebp",
-    "tmp": "gulp -f gulpfile.tmp.js",
-    "bem": "fls-bemtree-from-html"
+    "format": "prettier . --write"
   },
   "devDependencies": {
     "copy-webpack-plugin": "latest",
@@ -66,8 +63,5 @@
     "webpack-cli": "latest",
     "webpack-dev-server": "latest",
     "webpack-stream": "latest"
-  },
-  "dependencies": {
-    "simplebar": "latest"
   }
 }

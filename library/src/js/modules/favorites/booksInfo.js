@@ -1,4 +1,4 @@
-const books = {
+const booksInfo = {
   winter: [
     {
       title: 'The Book Eaters',
@@ -105,4 +105,4 @@ const books = {
   ],
 };
 
-export default books;
+export default booksInfo;

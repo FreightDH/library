@@ -1,4 +1,4 @@
-import books from './books.js';
+import booksInfo from './booksInfo.js';
 import { createElement } from '../../files/functions.js';
 
 export function initFilter() {
@@ -19,10 +19,14 @@ function createBook(season, index) {
   const title = createElement(
     'div',
     'book__title',
-    `${books[`${season}`][index]['title']} <br> <span>${books[`${season}`][index]['author']}</span>`,
+    `${booksInfo[`${season}`][index]['title']} <br> <span>${booksInfo[`${season}`][index]['author']}</span>`,
   );
-  const text = createElement('div', 'book__text', `${books[`${season}`][index]['text']}`);
-  const image = createElement('div', 'book__image', `<img src="${books[`${season}`][index]['image']}" alt="cover">`);
+  const text = createElement('div', 'book__text', `${booksInfo[`${season}`][index]['text']}`);
+  const image = createElement(
+    'div',
+    'book__image',
+    `<img src="${booksInfo[`${season}`][index]['image']}" alt="cover">`,
+  );
   const button = createElement('button', 'book__btn btn', '<span>Buy</span>');
 
   bookBody.append(staff, title, text, image, button);
