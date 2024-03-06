@@ -1,4 +1,4 @@
-import { popupClose, popupOpen } from '../../../files/popup.js';
+import { popupClose, popupOpen } from '../../../lib/popup.js';
 
 const initAuthModals = () => {
   initAuthModal('register');

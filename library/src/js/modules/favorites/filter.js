@@ -1,5 +1,5 @@
 import booksInfo from './booksInfo.js';
-import { createElement } from '../../files/functions.js';
+import { createElement } from '../../lib/helpers.js';
 
 const initFilter = () => {
   const booksElement = document.querySelector('.filter__picks');

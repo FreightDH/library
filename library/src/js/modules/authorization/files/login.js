@@ -1,4 +1,4 @@
-import { popupClose } from '../../../files/popup.js';
+import { popupClose } from '../../../lib/popup.js';
 import { setProfileIcon } from './helpers.js';
 
 const initLogin = () => {

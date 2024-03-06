@@ -1,6 +1,6 @@
 import validateForm from './validation.js';
 import { setProfileIcon } from './helpers.js';
-import { popupClose } from '../../../files/popup.js';
+import { popupClose } from '../../../lib/popup.js';
 
 const initRegistration = () => {
   const registerButton = document.querySelector('.register-submit');

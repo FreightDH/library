@@ -1,4 +1,4 @@
-import { bodyLockStatus, lockBody, unlockBody } from './functions.js';
+import { bodyLockStatus, lockBody, unlockBody } from './helpers.js';
 
 const popupOpen = (popup) => {
   if (bodyLockStatus && popup) {

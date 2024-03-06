@@ -1,7 +1,7 @@
 import '../scss/style.scss';
-import { isWebp } from './files/functions.js';
-import initMenu from './files/burger.js';
-import initSwiper from './files/swiper.js';
+import { isWebp } from './lib/helpers.js';
+import initMenu from './lib/burger.js';
+import initSwiper from './lib/swiper.js';
 import initFilter from './modules/favorites/filter.js';
 import initAuthorization from './modules/authorization/authorization.js';
 

@@ -1,4 +1,4 @@
-import { bodyLockStatus, bodyLockToggle, unlockBody } from './functions.js';
+import { bodyLockStatus, bodyLockToggle, unlockBody } from './helpers.js';
 
 const initMenu = () => {
   if (document.querySelector('.menu__icon')) {
