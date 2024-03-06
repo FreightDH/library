@@ -74,5 +74,23 @@ const createElement = (tag = 'div', classname = '', content = '') => {
   return element;
 };
 //----------------------------------------------------------------------
+const generateRandomHexNumber = () => {
+  const randomNumber = Math.floor(Math.random() * Math.pow(2, 32));
+  let hexString = randomNumber.toString(16);
 
-export { isWebp, lockBody, unlockBody, bodyLockToggle, bodyLockStatus, createElement };
+  while (hexString.length < 9) {
+    hexString += '0';
+  }
+
+  return hexString.toUpperCase();
+};
+
+export {
+  isWebp,
+  lockBody,
+  unlockBody,
+  bodyLockToggle,
+  bodyLockStatus,
+  createElement,
+  generateRandomHexNumber,
+};

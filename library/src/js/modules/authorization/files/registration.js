@@ -1,6 +1,7 @@
 import validateForm from './validation.js';
 import { setProfileIcon } from './helpers.js';
 import { popupClose } from '../../../lib/popup.js';
+import { generateRandomHexNumber } from '../../../lib/helpers.js';
 
 const initRegistration = () => {
   const registerButton = document.querySelector('.register-submit');
@@ -12,15 +13,23 @@ const registerUser = () => {
   const errorCount = validateForm(registerForm);
 
   if (!errorCount) {
+    const email = document.getElementById('emailInput').value;
+
+    if (localStorage.getItem(email)) {
+      alert('This email already registered!');
+      return;
+    }
+
     const firstName = document.getElementById('firstNameInput').value;
     const lastName = document.getElementById('lastNameInput').value;
-    const email = document.getElementById('emailInput').value;
     const password = document.getElementById('passwordInput').value;
+    const cardNumber = generateRandomHexNumber();
 
-    window.user = { firstName, lastName, email, password };
+    window.user = { firstName, lastName, email, password, cardNumber };
 
     localStorage.setItem('isSigned', 'true');
     localStorage.setItem(`${email}`, JSON.stringify(window.user));
+    localStorage.setItem(`${cardNumber}`, JSON.stringify(window.user));
     localStorage.setItem('lastUser', JSON.stringify(window.user));
 
     setProfileIcon(firstName, lastName);
