@@ -1,6 +1,6 @@
 import { logoutUser, setProfileIcon, toggleDropMenu } from './files/functions.js';
-import { initAuthModals } from './files/authModals.js';
-import { initRegistration } from './files/registration.js';
+import initAuthModals from './files/authModals.js';
+import initRegistration from './files/registration.js';
 
 const initAuthorization = () => {
   document.addEventListener('click', toggleDropMenu);

@@ -26,4 +26,4 @@ const initCrossLinks = () => {
   });
 };
 
-export { initAuthModals };
+export default initAuthModals;
