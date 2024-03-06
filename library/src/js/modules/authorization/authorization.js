@@ -1,11 +1,13 @@
-import { logoutUser, setProfileIcon, toggleDropMenu } from './files/functions.js';
+import { logoutUser, setProfileIcon, toggleDropMenu } from './files/helpers.js';
 import initAuthModals from './files/authModals.js';
 import initRegistration from './files/registration.js';
+import initLogin from './files/login.js';
 
 const initAuthorization = () => {
   document.addEventListener('click', toggleDropMenu);
   initAuthModals();
   initRegistration();
+  initLogin();
 
   const isSigned = !!localStorage.getItem('isSigned');
 

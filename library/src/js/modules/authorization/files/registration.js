@@ -1,5 +1,5 @@
 import validateForm from './validation.js';
-import { setProfileIcon } from './functions.js';
+import { setProfileIcon } from './helpers.js';
 import { popupClose } from '../../../files/popup.js';
 
 const initRegistration = () => {
@@ -20,11 +20,12 @@ const registerUser = () => {
     window.user = { firstName, lastName, email, password };
 
     localStorage.setItem('isSigned', 'true');
-    localStorage.setItem(`${firstName}${lastName}`, JSON.stringify(window.user));
+    localStorage.setItem(`${email}`, JSON.stringify(window.user));
     localStorage.setItem('lastUser', JSON.stringify(window.user));
 
     setProfileIcon(firstName, lastName);
     popupClose(registerForm);
+    registerForm.querySelectorAll('input').forEach((item) => (item.value = ''));
   } else {
     alert('Fill in all required fields!');
   }
