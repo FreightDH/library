@@ -1,0 +1,38 @@
+@import '@app/styles';
+
+.menu__link {
+  display: block;
+  position: relative;
+
+  font-size: 20px;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('font-size', 20, 18, 767.98, 320);
+    line-height: 0;
+  }
+
+  span {
+    position: relative;
+    line-height: 28px;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: #fff;
+      transition: all 0.3s ease 0s;
+    }
+  }
+
+  &:hover {
+    color: #fff;
+
+    span::after {
+      left: 0;
+      width: 100%;
+    }
+  }
+}
