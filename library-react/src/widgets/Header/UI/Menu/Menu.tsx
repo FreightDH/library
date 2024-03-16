@@ -1,8 +1,9 @@
 import { useState, type FC, type ReactElement } from 'react';
 
-import { MenuItem } from '../MenuItem';
-import cl from './Menu.module.scss';
 import { cn, useScrollBlock } from '@/shared/lib';
+
+import { MenuItem } from './MenuItem';
+import cl from './Menu.module.scss';
 
 interface MenuProps {}
 
