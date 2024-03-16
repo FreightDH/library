@@ -1,17 +1,19 @@
-import type { FC, ReactElement, ReactNode } from 'react';
+import type { FC, ReactElement } from 'react';
+import type { LinkProps } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 import cl from './MenuItem.module.scss';
 
-interface MenuItemProps {
-  children: ReactNode;
-  anchor: string;
+interface MenuItemProps extends LinkProps {
+  to: string;
 }
 
-export const MenuItem: FC<MenuItemProps> = ({ children, anchor }): ReactElement => {
+export const MenuItem: FC<MenuItemProps> = ({ to, children, ...props }): ReactElement => {
   return (
     <li>
-      <a className={cl.menu__link} href={`#${anchor}`}>
+      <Link className={cl.menu__link} to={to} {...props}>
         <span>{children}</span>
-      </a>
+      </Link>
     </li>
   );
 };
