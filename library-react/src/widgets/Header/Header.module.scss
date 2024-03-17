@@ -1,0 +1,40 @@
+@import '@/app/styles';
+
+.header {
+  padding: 20px 0;
+  background-color: #0c0c0e;
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #fff;
+  }
+
+  &__logo {
+    font-family: 'Forum';
+    font-size: 30px;
+    line-height: 50px;
+    letter-spacing: 0.6px;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 30, 18, 767.98, 320);
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+
+    @media (max-width: 1100px) {
+      flex-direction: row-reverse;
+      gap: 85px;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('gap', 85, 50, 767.98, 320);
+    }
+  }
+}
