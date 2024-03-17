@@ -95,18 +95,3 @@
     }
   }
 }
-
-.icons {
-  &__icon {
-    img {
-      width: 24px;
-      height: 24px;
-      object-fit: cover;
-
-      @media (max-width: $mobile) {
-        @include adaptiveValue('width', 24, 20, 767.98, 320);
-        @include adaptiveValue('height', 24, 20, 767.98, 320);
-      }
-    }
-  }
-}

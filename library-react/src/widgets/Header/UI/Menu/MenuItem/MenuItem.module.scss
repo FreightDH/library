@@ -27,12 +27,25 @@
     }
   }
 
-  &:hover {
-    color: #fff;
+  @media (hover: hover) {
+    &:hover {
+      color: #fff;
 
-    span::after {
-      left: 0;
-      width: 100%;
+      span::after {
+        left: 0;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      color: #fff;
+
+      span::after {
+        left: 0;
+        width: 100%;
+      }
     }
   }
 }

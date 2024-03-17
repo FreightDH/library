@@ -98,12 +98,23 @@
       transition: all 0.2s ease 0s;
     }
 
-    &:hover {
-      cursor: pointer;
+    @media (hover: hover) {
+      &:hover {
+        cursor: pointer;
 
-      &::after {
-        width: 100%;
-        left: 0;
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+
+    @media (hover: none) {
+      &:active {
+        &::after {
+          width: 100%;
+          left: 0;
+        }
       }
     }
 
