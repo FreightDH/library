@@ -1,4 +1,4 @@
-@import '@app/styles';
+@import '@/app/styles';
 
 .menu {
   &__icon {
@@ -6,8 +6,8 @@
     position: absolute;
     top: 35px;
     right: 20px;
-    width: rem(45);
-    height: rem(20);
+    width: toRem(45);
+    height: toRem(20);
     cursor: pointer;
     z-index: 5;
 
@@ -38,7 +38,7 @@
       display: block;
     }
 
-    .open & {
+    &.open {
       span {
         transform: scale(0);
 

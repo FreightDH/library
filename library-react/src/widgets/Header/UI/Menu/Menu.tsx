@@ -5,8 +5,6 @@ import { cn, useScrollBlock } from '@/shared/lib';
 import { MenuItem } from './MenuItem';
 import cl from './Menu.module.scss';
 
-interface MenuProps {}
-
 const menuItems = [
   { id: 1, content: 'About', to: '#about' },
   { id: 2, content: 'Favorites', to: '#favorites' },
@@ -15,11 +13,11 @@ const menuItems = [
   { id: 5, content: 'Library Card', to: '#libraryCard' },
 ];
 
-export const Menu: FC<MenuProps> = (): ReactElement => {
-  const [isMenuOpen, setMenuOpen] = useState(false);
+export const Menu: FC = (): ReactElement => {
+  const [isMenuOpen, setMenuOpen] = useState(false); //! в глобальный стейт, при клике на иконку профиля -> false
   const [blockScroll, allowScroll] = useScrollBlock();
 
-  const handleClick = () => {
+  const toggleMenu = () => {
     if (isMenuOpen) {
       allowScroll();
       setMenuOpen(false);
@@ -32,12 +30,12 @@ export const Menu: FC<MenuProps> = (): ReactElement => {
 
   return (
     <div className={cl.menu}>
-      <button className={cn(cl.menu__icon, { [cl.open]: isMenuOpen })} type="button" onClick={handleClick}>
+      <button className={cn(cl.menu__icon, { [cl.open]: isMenuOpen })} type="button" onClick={toggleMenu}>
         <span></span>
         <span></span>
         <span></span>
       </button>
-      <nav className={cn(cl.menu__body, { [cl.open]: isMenuOpen })}>
+      <nav className={cn(cl.menu__body, { [cl.open]: isMenuOpen })} onClick={toggleMenu}>
         <ul className={cl.menu__list}>
           {menuItems.map((item) => (
             <MenuItem key={item.id} to={item.to}>
