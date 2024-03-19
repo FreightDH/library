@@ -21,6 +21,7 @@
   "devDependencies": {
     "@types/react": "^18.2.15",
     "@types/react-dom": "^18.2.7",
+    "@types/react-slick": "^0.23.13",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "@vitejs/plugin-react": "^4.0.3",
@@ -35,7 +36,9 @@
     "husky": "^8.0.3",
     "lint-staged": "^15.0.2",
     "prettier": "^3.0.3",
+    "react-slick": "^0.30.2",
     "sass": "^1.69.4",
+    "slick-carousel": "^1.8.1",
     "typescript": "^5.0.2",
     "typescript-plugin-css-modules": "^5.0.2",
     "vite": "^4.4.5"

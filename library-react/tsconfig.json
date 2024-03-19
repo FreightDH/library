@@ -30,7 +30,7 @@
       "@/*": ["src/*"],
       "@/app/*": ["src/app/*"],
       "@/pages/*": ["src/pages/*"],
-      "@/features/*": ["features/*"],
+      "@/features/*": ["src/features/*"],
       "@/widgets/*": ["src/widgets/*"],
       "@/shared/*": ["src/shared/*"]
     }
