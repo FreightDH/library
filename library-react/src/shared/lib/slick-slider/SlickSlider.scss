@@ -1,0 +1,104 @@
+@import '@/app/styles';
+
+$slideSize: 450px;
+$slideMinSize: ($minWidth - $containerPadding) + px;
+$spaceBetween: 25px;
+
+.slider__wrapper {
+  max-width: calc($slideSize * 3 + $spaceBetween * 2);
+
+  @media (max-width: 1439.98px) {
+    max-width: calc($slideSize * 2 + $spaceBetween);
+  }
+
+  @media (max-width: $tablet) {
+    max-width: $slideSize;
+  }
+
+  @media (max-width: $mobileSmall) {
+    @include adaptiveValue('max-width', 360, 290, 479.98, 320);
+  }
+}
+//-----------------------------------------------------------------------
+.slick-list {
+  margin: 0 calc($spaceBetween / -2);
+}
+
+.slick-slide {
+  padding: 0 calc($spaceBetween / 2);
+
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+//-----------------------------------------------------------------------
+.slick-dots {
+  padding: 40px 0px 0px 0px;
+  @include adaptiveValue('padding-top', 40, 20);
+  position: static;
+
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('gap', 10, 5, 767.98, 320);
+  }
+}
+
+.slick-dots li {
+  width: 16px;
+  height: 16px;
+  margin: 0px 0px 0px 0px;
+
+  background-color: #0c0c0c;
+  border-radius: 50%;
+
+  &.slick-active {
+    background-color: #bb945f;
+  }
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('width', 16, 12, 767.98, 320);
+    @include adaptiveValue('height', 16, 12, 767.98, 320);
+  }
+}
+
+.slick-dots li button {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+
+  &::before {
+    display: none;
+  }
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('width', 16, 12, 767.98, 320);
+    @include adaptiveValue('height', 16, 12, 767.98, 320);
+  }
+}
+//-----------------------------------------------------------------------
+.slick-next,
+.slick-prev {
+  width: 24px;
+  height: 24px;
+
+  &::before {
+    display: none;
+  }
+}
+
+.slick-prev {
+  top: 48%;
+  left: -82px;
+  @include adaptiveValue('left', -82, -35);
+}
+
+.slick-next {
+  right: -82px;
+  @include adaptiveValue('right', -82, -35);
+}
