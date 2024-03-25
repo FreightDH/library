@@ -1,0 +1,118 @@
+@import '@/app/styles';
+
+.book {
+  width: 550px;
+  min-height: 555px;
+  padding: 15px 20px;
+  flex: 0 0 550px;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid #000;
+  transition: all 0.3s ease 0s;
+
+  @media (max-width: 1500px) {
+    flex: 1 1 auto;
+  }
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('max-width', 550, 280, 767.98, 320);
+    @include adaptiveValue('padding-left', 20, 10);
+    @include adaptiveValue('padding-right', 20, 10);
+  }
+
+  &.hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &__staff {
+    font-family: 'Forum';
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+    position: relative;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 16, 767.98, 320);
+
+      &::before {
+        @include adaptiveValue('width', 60, 40);
+      }
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 60px;
+      height: 1px;
+      bottom: -10px;
+      left: 0;
+      background-color: #bb945f;
+    }
+  }
+
+  &__title {
+    padding: 30px 0px 20px 0px;
+
+    font-size: 15px;
+    line-height: 40px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    span {
+      text-transform: capitalize;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('padding-top', 30, 20);
+      @include adaptiveValue('padding-bottom', 20, 5);
+      @include adaptiveValue('font-size', 15, 12, 767.98, 320);
+      @include adaptiveValue('line-height', 40, 25);
+    }
+  }
+
+  &__text {
+    max-width: 355px;
+    flex: 1 1 auto;
+
+    font-size: 15px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('max-width', 355, 180);
+      @include adaptiveValue('font-size', 15, 12, 767.98, 320);
+      @include adaptiveValue('line-height', 40, 25);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    bottom: -1px;
+    right: -40px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('width', 200, 100, 767.98, 320);
+      @include adaptiveValue('height', 300, 150, 767.98, 320);
+      @include adaptiveValue('right', -40, -10, 767.98, 320);
+    }
+  }
+
+  &__btn {
+    margin: 24px 0px 0px 0px;
+    align-self: flex-start;
+  }
+}
