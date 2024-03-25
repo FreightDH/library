@@ -1,0 +1,79 @@
+@import '@/app/styles';
+
+.filter {
+  &__title {
+    line-height: 2;
+    font-weight: 700;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 16, 767.98, 320);
+    }
+  }
+
+  &__options {
+    padding: 40px 0px;
+    display: flex;
+    gap: 90px;
+
+    @media (max-width: $mobile) {
+      flex-wrap: wrap;
+      gap: 15px;
+      @include adaptiveValue('font-size', 20, 15, 767.98, 320);
+      @include adaptiveValue('padding-top', 40, 10, 767.98, 320);
+      @include adaptiveValue('padding-bottom', 40, 30, 767.98, 320);
+    }
+  }
+}
+
+.options {
+  &__item {
+    position: relative;
+
+    display: inline-flex;
+    align-items: center;
+
+    text-transform: capitalize;
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      margin: 0px 20px 0px 0px;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border: 2px solid #000;
+    }
+
+    &::after {
+      content: '';
+      display: none;
+      position: absolute;
+      top: 9px;
+      left: 5px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background-color: #000;
+    }
+
+    @media (max-width: $mobile) {
+      flex: 0 0 50%;
+
+      &::before {
+        @include adaptiveValue('margin-right', 20, 10);
+      }
+
+      &::after {
+        @include adaptiveValue('top', 9, 6);
+      }
+    }
+
+    &.active {
+      font-weight: 700;
+
+      &::after {
+        display: block;
+      }
+    }
+  }
+}
