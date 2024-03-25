@@ -1,0 +1,42 @@
+@import '@/app/styles';
+
+.product {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  column-gap: 60px;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('font-size', 20, 14, 767.98, 320);
+    @include adaptiveValue('line-height', 40, 32, 767.98, 320);
+    @include adaptiveValue('column-gap', 60, 25, 767.98, 320);
+  }
+
+  &__name {
+    flex: 0 0 196px;
+    line-height: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+    white-space: nowrap;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('line-height', 40, 32, 767.98, 320);
+      white-space: normal;
+      flex: 1 1 auto;
+    }
+
+    &.right {
+      flex: 1 1 auto;
+    }
+  }
+
+  &__divider {
+    width: 100px;
+    height: 1px;
+    background-color: #bb945f;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('width', 100, 45, 767.98, 320);
+    }
+  }
+}
