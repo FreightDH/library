@@ -12,6 +12,7 @@
 
   border: 1px solid #000;
   transition: all 0.3s ease 0s;
+  animation: fadeIn 1s;
 
   @media (max-width: 1500px) {
     flex: 1 1 auto;
@@ -21,11 +22,6 @@
     @include adaptiveValue('max-width', 550, 280, 767.98, 320);
     @include adaptiveValue('padding-left', 20, 10);
     @include adaptiveValue('padding-right', 20, 10);
-  }
-
-  &.hide {
-    opacity: 0;
-    visibility: hidden;
   }
 
   &__staff {
@@ -114,5 +110,14 @@
   &__btn {
     margin: 24px 0px 0px 0px;
     align-self: flex-start;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
