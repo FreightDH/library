@@ -1,0 +1,38 @@
+@import '@/app/styles';
+
+.column {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+
+  &.column__right {
+    text-align: right;
+  }
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('gap', 40, 15, 767.98, 320);
+  }
+
+  &__title {
+    color: #bb945f;
+    font-family: 'Forum';
+    font-size: 40px;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 40, 25, 767.98, 320);
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('gap', 40, 20, 767.98, 320);
+    }
+  }
+}
