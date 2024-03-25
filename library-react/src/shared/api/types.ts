@@ -7,4 +7,9 @@ type BookInfo = {
   image: string;
 };
 
-export type { Season, BookInfo };
+type ProductInfo = {
+  name: string;
+  price: string;
+};
+
+export type { Season, BookInfo, ProductInfo };
