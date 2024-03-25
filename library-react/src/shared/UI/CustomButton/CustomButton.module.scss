@@ -1,0 +1,31 @@
+.btn {
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  padding: 0px 27px;
+
+  color: #0c0c0e;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+
+  border: 1px solid #0c0c0e;
+  border-radius: 2px;
+  transition: all 0.3s ease 0s;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: #bb945f;
+    }
+  }
+
+  @media (hover: none) {
+    &:active {
+      background-color: #bb945f;
+    }
+  }
+
+  &.fw {
+    width: 100%;
+  }
+}
