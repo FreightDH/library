@@ -1,0 +1,23 @@
+@import '@/app/styles';
+
+.favorites {
+  padding: 20px 0px 40px 0px;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('padding-top', 20, 10, 767.98, 320);
+    @include adaptiveValue('padding-bottom', 40, 20, 767.98, 320);
+  }
+
+  &__books {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 40px;
+
+    @media (max-width: 1500px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
