@@ -4,12 +4,14 @@ import { CustomButton } from '@/shared/UI/CustomButton';
 import type { BookInfo } from '@/shared/api/types';
 
 import cl from './Book.module.scss';
+import { cn } from '@/shared/lib';
 
 interface BookProps {
   book: BookInfo;
+  wasBought: boolean;
 }
 
-export const Book: FC<BookProps> = ({ book }): ReactElement => {
+export const Book: FC<BookProps> = ({ book, wasBought }): ReactElement => {
   const { title, author, text, image } = book;
 
   return (
@@ -22,7 +24,9 @@ export const Book: FC<BookProps> = ({ book }): ReactElement => {
       <div className={cl.book__image}>
         <img alt={`${title}-cover`} src={image} />
       </div>
-      <CustomButton className={cl.book__btn}>Buy</CustomButton>
+      <CustomButton className={cn(cl.book__btn, { [cl.owned]: wasBought })} disabled={wasBought}>
+        {wasBought ? 'Own' : 'Buy'}
+      </CustomButton>
     </div>
   );
 };

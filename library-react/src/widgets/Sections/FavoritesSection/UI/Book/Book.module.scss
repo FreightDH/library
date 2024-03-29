@@ -110,6 +110,16 @@
   &__btn {
     margin: 24px 0px 0px 0px;
     align-self: flex-start;
+
+    &.owned {
+      color: #bb945f;
+      border: 1px solid #bb945f;
+
+      &:hover {
+        background-color: transparent;
+        cursor: default;
+      }
+    }
   }
 }
 

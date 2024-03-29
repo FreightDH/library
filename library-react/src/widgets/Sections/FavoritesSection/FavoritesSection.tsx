@@ -13,6 +13,9 @@ const filterOptions = ['winter', 'spring', 'summer', 'autumn'];
 export const FavoritesSection: FC = (): ReactElement => {
   const [activeFilter, setActiveFilter] = useState<Season>('winter');
 
+  //! global state
+  const wasBought = true;
+
   return (
     <section className={cl.favorites} id="favorites">
       <div className="favorites__container">
@@ -25,7 +28,7 @@ export const FavoritesSection: FC = (): ReactElement => {
           />
           <div className={cl.favorites__books}>
             {booksInfo[activeFilter].map((book) => (
-              <Book key={book.title} book={book} />
+              <Book key={book.title} book={book} wasBought={wasBought} />
             ))}
           </div>
         </div>

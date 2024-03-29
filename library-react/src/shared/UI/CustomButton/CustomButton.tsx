@@ -8,9 +8,10 @@ export const CustomButton: FC<ComponentPropsWithRef<'button'>> = ({
   children,
   onClick,
   className = '',
+  ...props
 }): ReactElement => {
   return (
-    <button className={cn(cl.btn, {}, [className])} onClick={onClick}>
+    <button className={cn(cl.btn, {}, [className])} onClick={onClick} {...props}>
       <span>{children}</span>
     </button>
   );
