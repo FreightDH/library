@@ -1,0 +1,83 @@
+@import '@/app/styles';
+
+.card {
+  max-width: 600px;
+  margin: 30px 0px 0px 0px;
+  padding: 20px 20px 30px 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  border: 3px solid #bb945f;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('margin-top', 30, 15, 767.98, 320);
+    @include adaptiveValue('padding-top', 20, 10, 767.98, 320);
+    @include adaptiveValue('padding-bottom', 30, 15, 767.98, 320);
+    @include adaptiveValue('padding-right', 20, 10, 767.98, 320);
+    @include adaptiveValue('padding-left', 20, 10, 767.98, 320);
+  }
+
+  &__body {
+    padding: 20px 20px 25px 20px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    background-color: #bb945f;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('padding-top', 20, 15, 767.98, 320);
+      @include adaptiveValue('padding-bottom', 25, 15, 767.98, 320);
+      @include adaptiveValue('padding-right', 20, 15, 767.98, 320);
+      @include adaptiveValue('padding-left', 20, 15, 767.98, 320);
+    }
+  }
+
+  &__title {
+    margin: 0px 0px 20px 0px;
+
+    font-family: 'Forum';
+    font-size: 30px;
+    letter-spacing: 0.6px;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 30, 18, 767.98, 320);
+      @include adaptiveValue('margin-bottom', 20, 15, 767.98, 320);
+    }
+  }
+
+  &__inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  &__footer {
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__btn {
+    height: auto;
+    padding: 10px 40px;
+    align-self: center;
+
+    font-size: 20px;
+    line-height: normal;
+
+    @media (max-width: $mobile) {
+      @include adaptiveValue('font-size', 20, 12, 767.98, 320);
+      @include adaptiveValue('padding-top', 10, 8, 767.98, 320);
+      @include adaptiveValue('padding-bottom', 10, 8, 767.98, 320);
+      @include adaptiveValue('padding-right', 40, 25, 767.98, 320);
+      @include adaptiveValue('padding-left', 40, 25, 767.98, 320);
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+}
