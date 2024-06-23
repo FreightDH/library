@@ -1,0 +1,28 @@
+@import '@/app/styles';
+
+.input {
+  padding: 8px 20px;
+  border-radius: 10px;
+
+  color: #8e8e8e;
+  font-family: 'Forum';
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+
+  @media (max-width: $mobile) {
+    @include adaptiveValue('font-size', 30, 18, 767.98, 320);
+    @include adaptiveValue('line-height', 50, 30, 767.98, 320);
+    @include adaptiveValue('padding-right', 20, 10, 767.98, 320);
+    @include adaptiveValue('padding-left', 20, 10, 767.98, 320);
+  }
+
+  &:focus {
+    color: #000;
+  }
+
+  &:focus::placeholder {
+    color: transparent;
+    transition: all 0.2s ease 0s;
+  }
+}
