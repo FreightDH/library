@@ -172,11 +172,25 @@
       color: transparent;
       transition: all 0.2s ease 0s;
     }
+
+    &.active {
+      color: #bb945f;
+
+      &:disabled {
+        background-color: #fff;
+        cursor: text;
+      }
+    }
+  }
+
+  &__footer {
+    margin: 20px 0px 0px 0px;
+    display: flex;
+    flex-direction: column;
   }
 
   &__btn {
     height: auto;
-    margin: 20px 0px 0px 0px;
     padding: 10px 40px;
     align-self: center;
 
@@ -190,6 +204,41 @@
       @include adaptiveValue('padding-bottom', 10, 8, 767.98, 320);
       @include adaptiveValue('padding-right', 40, 25, 767.98, 320);
       @include adaptiveValue('padding-left', 40, 25, 767.98, 320);
+    }
+
+    &.hidden {
+      display: none;
+    }
+  }
+
+  &__stats {
+    margin: 20px 0px 0px 0px;
+    display: none;
+    justify-content: center;
+    gap: 35px;
+
+    &.visible {
+      display: flex;
+    }
+  }
+}
+
+.stats {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 10px;
+  }
+
+  &__icon {
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
     }
   }
 }

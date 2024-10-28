@@ -4,6 +4,7 @@ import initMenu from './lib/burger.js';
 import initSwiper from './lib/swiper.js';
 import initFilter from './modules/favorites/filter.js';
 import initAuthorization from './modules/authorization/authorization.js';
+import initCheckUser from './modules/digital/index.js';
 
 window.addEventListener('load', () => {
   isWebp();
@@ -11,6 +12,7 @@ window.addEventListener('load', () => {
   initSwiper();
   initFilter();
   initAuthorization();
+  initCheckUser();
 
   document.querySelector('.modal').classList.add('visible');
   document.querySelector('.profile__dropdown').classList.add('visible');

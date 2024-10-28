@@ -17,7 +17,7 @@ const checkUser = () => {
     document.getElementById('passwordLoginInput').value = '';
 
     localStorage.setItem('isSigned', 'true');
-    localStorage.setItem('lastUser', JSON.stringify(user));
+    localStorage.setItem('currentUser', JSON.stringify(user));
     setProfileIcon(user.firstName, user.lastName);
     popupClose(loginForm);
   } else {

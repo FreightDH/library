@@ -28,6 +28,11 @@ const createBook = (season, index) => {
     `<img src="${booksInfo[`${season}`][index]['image']}" alt="cover">`,
   );
   const button = createElement('button', 'book__btn btn', '<span>Buy</span>');
+  button.addEventListener('click', (event) => {
+    if (!!localStorage.getItem('isSigned')) {
+      //! открываем попап с покупкой
+    }
+  });
 
   bookBody.append(staff, title, text, image, button);
   return bookBody;

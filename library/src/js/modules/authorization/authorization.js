@@ -12,7 +12,7 @@ const initAuthorization = () => {
   const isSigned = !!localStorage.getItem('isSigned');
 
   if (isSigned) {
-    const data = JSON.parse(localStorage.getItem('lastUser'));
+    const data = JSON.parse(localStorage.getItem('currentUser'));
     const { firstName, lastName } = data;
     setProfileIcon(firstName, lastName);
   }

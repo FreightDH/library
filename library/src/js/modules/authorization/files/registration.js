@@ -30,7 +30,7 @@ const registerUser = () => {
     localStorage.setItem('isSigned', 'true');
     localStorage.setItem(`${email}`, JSON.stringify(window.user));
     localStorage.setItem(`${cardNumber}`, JSON.stringify(window.user));
-    localStorage.setItem('lastUser', JSON.stringify(window.user));
+    localStorage.setItem('currentUser', JSON.stringify(window.user));
 
     setProfileIcon(firstName, lastName);
     popupClose(registerForm);

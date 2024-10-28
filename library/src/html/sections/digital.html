@@ -8,10 +8,41 @@
           <div class="column__card">
             <form action="#" class="card__body">
               <div class="card__title">Brooklyn Public Library</div>
-              <input id="nameInput" type="text" placeholder="Reader's name" class="card__input" />
-              <input id="cardNumberInput" type="text" placeholder="Card number" class="card__input" />
+              <input
+                id="nameInput"
+                type="text"
+                autocomplete="off"
+                placeholder="Reader's name"
+                class="card__input"
+              />
+              <input
+                id="cardNumberInput"
+                type="text"
+                autocomplete="off"
+                placeholder="Card number"
+                class="card__input"
+              />
             </form>
-            <button id="cardButton" class="card__btn btn"><span>Check the card</span></button>
+            <div class="card__footer">
+              <button id="cardButton" class="card__btn btn"><span>Check the card</span></button>
+              <div class="card__stats">
+                <div class="stats__item">
+                  <div class="stats__title">Visits</div>
+                  <div class="stats__icon"><img src="@img/digital/visits.svg" alt="visits-icon" /></div>
+                  <div class="stats__count visits--count">0</div>
+                </div>
+                <div class="stats__item">
+                  <div class="stats__title">Bonuses</div>
+                  <div class="stats__icon"><img src="@img/digital/bonuses.svg" alt="bonuses-icon" /></div>
+                  <div class="stats__count bonuses--count">0</div>
+                </div>
+                <div class="stats__item">
+                  <div class="stats__title">Books</div>
+                  <div class="stats__icon"><img src="@img/digital/books.svg" alt="books-icon" /></div>
+                  <div class="stats__count books--count">0</div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         <div class="digital__column digital-column-right">

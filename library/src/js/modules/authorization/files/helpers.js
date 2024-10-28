@@ -1,5 +1,4 @@
 const setProfileIcon = (firstName, lastName) => {
-  console.log(firstName, lastName);
   const profileIcon = document.querySelector('.profile__icon');
   profileIcon.parentElement.classList.add('signed');
   profileIcon.innerHTML = `<span title="${firstName} ${lastName}">${firstName.slice(0, 1)}${lastName.slice(
